@@ -2,5 +2,5 @@
 
 /* @var $this yii\web\View */
 
-//echo "string";
+echo "string";
 ?>
