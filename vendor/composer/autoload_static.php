@@ -27,6 +27,7 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         ),
         'p' => 
         array (
+            'postor\\sae\\' => 11,
             'phpDocumentor\\Reflection\\' => 25,
         ),
         'c' => 
@@ -103,6 +104,10 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'postor\\sae\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/postor/yii2-for-sae',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (

@@ -48,4 +48,13 @@ return array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug',
     ),
   ),
+  'postor/yii2-for-sae' => 
+  array (
+    'name' => 'postor/yii2-for-sae',
+    'version' => '0.0.5.0',
+    'alias' => 
+    array (
+      '@postor/sae' => $vendorDir . '/postor/yii2-for-sae',
+    ),
+  ),
 );
