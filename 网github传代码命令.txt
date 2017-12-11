@@ -3,3 +3,24 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/sucangyu/yii2Blog.git
 git push -u origin master
+
+
+
+新浪git上传代码
+$ git config --global user.name "用户名"
+$ git config --global user.email "邮箱"
+$ cd D:/wamp/www/test1
+$ git init
+$ git add .//添加到暂存区里面去
+$ git status
+$ git remote add sae https://git.sinacloud.com/dropload//添加远程库，网址是新浪云上创建的应用的仓库地址
+$ git add .
+$ git commit -am "make it better"//把文件提交到仓库，make it better是提交的注释
+输入新浪云帐号和密码
+$ git push sae master:1//把本地库的内容推送到远程
+
+更多内容请参考
+新浪云代码部署手册
+http://www.sinacloud.com/doc/sae/tutorial/code-deploy.html#git
+推荐！手把手教你使用Git - 文章 - 伯乐在线
+http://blog.jobbole.com/78960/
