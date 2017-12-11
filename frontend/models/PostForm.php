@@ -29,6 +29,13 @@ class PostForm extends Model
     const SCENARIOS_CAREATE = 'careate'; //创建文章
     const SCENARIOS_UPDATE = 'update';   //更新文章
 
+    /*定义事件
+        EVENT_AFTER_CREATE 创建后事件
+        EVENT_AFTER_UPDATE 更新后事件
+    */
+    const EVENT_AFTER_CREATE = "eventAfterCreate";
+    const EVENT_AFTER_UPDATE = "eventAfterUpdate";
+
     /*场景设置*/
     public function scenarios()
     {
