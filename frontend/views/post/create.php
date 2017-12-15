@@ -34,8 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				    ]
 				]) ?>
 
-
-                <?= $form->field($model, 'tags')->widget('common\widgets\tags\TagWidget') ?>
+                <?=$form->field($model, 'tags')->widget('common\widgets\tags\TagWidget')?>
 
                 <div class="form-group">
                     <?= Html::submitButton('发布', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>

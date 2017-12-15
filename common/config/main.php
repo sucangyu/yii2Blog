@@ -18,23 +18,23 @@ return [
             'password' => 'kzwyzxjzjywz4jhhxz35kw5iwz3kkkm5wxwh3w2j',
             'charset' => 'utf8',
         ],
-        //use seastorage for assets使用sae发布资源
-        'assetManager' =>[
-            'class'=>'postor\sae\SaeAssetManager',
-            'assetDomain'=>'assets',
-            'converter' => [
-                'class' => 'yii\web\AssetConverter',
-            ],
-        ],
-        //log to db日志也修改到db
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\DbTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
-        ],
+        // //use seastorage for assets使用sae发布资源
+        // 'assetManager' =>[
+        //     'class'=>'postor\sae\SaeAssetManager',
+        //     'assetDomain'=>'assets',
+        //     'converter' => [
+        //         'class' => 'yii\web\AssetConverter',
+        //     ],
+        // ],
+        // //log to db日志也修改到db
+        // 'log' => [
+        //     'traceLevel' => YII_DEBUG ? 3 : 0,
+        //     'targets' => [
+        //         [
+        //             'class' => 'yii\log\DbTarget',
+        //             'levels' => ['error', 'warning'],
+        //         ],
+        //     ],
+        // ],
     ],
 ];

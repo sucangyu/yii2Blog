@@ -143,3 +143,41 @@ a.desc:after {
 }
 
 
+.select2-container--default .select2-selection--multiple {
+    background-color: white;
+    border: 1px solid #aaa;
+    cursor: text;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #2b542c;
+    outline: 0 none;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #5cb85c;
+    color:#fff;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color:#fff;
+}
+
+
+.page-title {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+
+.page-title span {
+    color: #999;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.page-content {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    min-height: 400px;
+}

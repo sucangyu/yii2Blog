@@ -109,7 +109,7 @@ CREATE TABLE `relation_post_tags` (
 CREATE TABLE `tags` (
   `id` int(11) NOT NULL COMMENT '自增ID',
   `tag_name` varchar(255) NOT NULL COMMENT '标签名称',
-  `poat_num` int(11) NOT NULL DEFAULT '0' COMMENT '关联文章数'
+  `post_num` int(11) NOT NULL DEFAULT '0' COMMENT '关联文章数'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='标签表';
 
 -- --------------------------------------------------------

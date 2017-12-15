@@ -11,6 +11,7 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
 
@@ -27,7 +28,6 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         ),
         'p' => 
         array (
-            'postor\\sae\\' => 11,
             'phpDocumentor\\Reflection\\' => 25,
         ),
         'c' => 
@@ -104,10 +104,6 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
-        ),
-        'postor\\sae\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/postor/yii2-for-sae',
         ),
         'phpDocumentor\\Reflection\\' => 
         array (

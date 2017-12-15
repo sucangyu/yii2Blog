@@ -64,5 +64,11 @@ class PostsModel extends BaseModel
         ];
     }
 
+    /**
+     * 文章关联关系
+     */
+    public function getRelate(){
+        return $this->hasMany(RelationPostTagsModel::className(),['post_id'=>'id']);
 
+    }
 }
