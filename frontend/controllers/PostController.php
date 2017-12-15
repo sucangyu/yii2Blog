@@ -106,7 +106,7 @@ class PostController extends BaseController
 
         //统计文章附属值
         $modelPE = new PostExtendsModel();
-        $modelPE->upCounter();
+        $modelPE->upCounter(['post_id'=>$id],'browser',1);
         return $this->render('view',['data'=>$data]);
     }
 

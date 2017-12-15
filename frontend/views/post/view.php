@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h3><?=$data['title']?></h3>
             <span>作者:<?=$data['user_name']?></span>
             <span>发布时间:<?=date('Y-m-d',$data['created_at'])?></span>
-            <span>浏览:0</span>
+            <span>浏览:<?=isset($data['extend']['browser'])?$data['extend']['browser']:0?></span>
         </div>
         <div class="page-content">
             <?=$data['content']?>

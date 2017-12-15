@@ -50,9 +50,17 @@ class PostExtendsModel extends BaseModel
     }
 
     /**
-     *
+     *更新文章统计
      */
-    public function upCounter(){
-        
+    public function upCounter($cond,$attbute,$num){
+        $counter = $this->findOne($cond);
+        if (!$counter){
+            $this->setAttributes($cond);
+            $this->$attbute = $num;
+            $this->save();
+        }else{
+            $countData[$attbute] = $num;
+            $counter->updateCounters($countData);
+        }
     }
 }
