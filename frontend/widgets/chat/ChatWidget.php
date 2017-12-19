@@ -1,14 +1,13 @@
 <?php
 namespace frontend\widgets\chat;
 /**
- * 文章列表
+ * 留言板挂件
  */
+use yii\base\Object;
+use frontend\models\FeedForm;
 use yii;
 use yii\base\Widget;
-use common\models\PostsModel;
-use frontend\models\PostForm;
-use yii\helpers\Url;
-use yii\data\Pagination;
+
 
 class ChatWidget extends Widget
 {
@@ -19,7 +18,9 @@ class ChatWidget extends Widget
     }
     public function run()
     {
-        return $this->render('index');
+        $feed = new FeedForm();
+        $data['feed'] = $feed->getList();
+        return $this->render('index',['data'=>$data]);
     }
     
 

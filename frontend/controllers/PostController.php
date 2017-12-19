@@ -97,6 +97,26 @@ class PostController extends BaseController
     }
 
     /**
+     * 更新文章
+     */
+    public function actionUpdate($id)
+    {
+        $model = new PostForm();
+        $model->setScenario(PostForm::SCENARIOS_UPDATE );
+        $model->getupdate($id);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()){
+            if (!$model->update($id)){
+                Yii::$app->session->setFlash('warning', $model->_lastError);
+            }else{
+                return $this->redirect(['post/view','id'=>$model->id]);
+            }
+        }
+        $cats = CatsModel::getAllCats();
+        return $this->render('update',['model'=>$model,'cats' => $cats]);
+    }
+
+
+    /**
      * 文章详情
      */
     public function actionView($id){

@@ -37,7 +37,7 @@ class PostsModel extends BaseModel
     public function rules()
     {
         return [
-            [['title', 'summary', 'content', 'label_img', 'cat_id', 'user_id', 'user_name', 'is_valid', 'created_at', 'updated_at'], 'required'],
+            [['title', 'summary', 'content', 'cat_id', 'user_id', 'user_name', 'is_valid', 'created_at', 'updated_at'], 'required'],
             [['content'], 'string'],
             [['cat_id', 'user_id', 'is_valid', 'created_at', 'updated_at'], 'integer'],
             [['title', 'summary', 'label_img', 'user_name'], 'string', 'max' => 255],
@@ -51,16 +51,16 @@ class PostsModel extends BaseModel
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
-            'summary' => Yii::t('app', 'Summary'),
-            'content' => Yii::t('app', 'Content'),
-            'label_img' => Yii::t('app', 'Label Img'),
-            'cat_id' => Yii::t('app', 'Cat ID'),
-            'user_id' => Yii::t('app', 'User ID'),
-            'user_name' => Yii::t('app', 'User Name'),
-            'is_valid' => Yii::t('app', 'Is Valid'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
+            'title' => '标题',
+            'summary' => '摘要',
+            'content' => '内容',
+            'label_img' => '标签图',
+            'cat_id' => '分类',
+            'user_id' => '用户ID',
+            'user_name' => '用户名',
+            'is_valid' => '是否发布',
+            'created_at' => '发布时间',
+            'updated_at' => '更新时间',
         ];
     }
 
@@ -77,6 +77,14 @@ class PostsModel extends BaseModel
      */
     public function getExtend(){
         return $this->hasOne(PostExtendsModel::className(),['post_id'=>'id']);
+
+    }
+
+    /**
+     * 标签关联关系
+     */
+    public function getCat(){
+        return $this->hasOne(CatsModel::className(),['id'=>'cat_id']);
 
     }
 }

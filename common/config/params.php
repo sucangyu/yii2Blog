@@ -4,5 +4,5 @@ return [
     'supportEmail' => 'support@example.com',
     'user.passwordResetTokenExpire' => 3600,
     'upload_url' => '',
-    'default_label_img' => '/statics/images/default.jpg'
+    'default_label_img' => '/statics/images/111.jpg'
 ];

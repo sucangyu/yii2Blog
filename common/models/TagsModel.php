@@ -40,8 +40,8 @@ class TagsModel extends BaseModel
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'tag_name' => Yii::t('app', 'Tag Name'),
-            'post_num' => Yii::t('app', 'Post Num'),
+            'tag_name' => '标签名称',
+            'post_num' => '	关联文章数',
         ];
     }
 }

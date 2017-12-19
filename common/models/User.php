@@ -185,4 +185,22 @@ class User extends BaseModel implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => '用户名',
+            'auth_key' => '自动登录key',
+            'password_hash' => '加密密码',
+            'password_reset_token' => '重置密码token',
+            'email_validate_token' => '邮箱验证token',
+            'email' => '邮箱',
+            'role' => '角色',
+            'status' => '状态',
+            'avatar' => '头像',
+            'vip_lv' => 'VIP等级',
+            'created_at' => '创建时间',
+            'updated_at' => '更新时间',
+        ];
+    }
 }

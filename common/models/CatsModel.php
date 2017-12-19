@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "cats".
  *
  * @property integer $id
- * @property string $cat_namr
+ * @property string $cat_name
  */
 class CatsModel extends BaseModel
 {
@@ -26,8 +26,8 @@ class CatsModel extends BaseModel
     public function rules()
     {
         return [
-            [['cat_namr'], 'required'],
-            [['cat_namr'], 'string', 'max' => 255],
+            [['cat_name'], 'required'],
+            [['cat_name'], 'string', 'max' => 255],
         ];
     }
 
@@ -38,7 +38,7 @@ class CatsModel extends BaseModel
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'cat_namr' => Yii::t('app', 'Cat Namr'),
+            'cat_name' => '分类名称',
         ];
     }
 

@@ -53,7 +53,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,//是否开启美化效果
             'showScriptName' => true,//是否或略脚本名index.php(false为省略但需修改apache的rewrite功能)
-            'suffix'=>'.html',//添加后缀
+            'suffix'=>'',//添加后缀 例: .html .php
             'rules' => [
             ],
         ],

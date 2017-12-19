@@ -1,7 +1,7 @@
 <?php
 namespace frontend\widgets\banner;
 /**
- * 文章列表
+ * 轮播组件
  */
 use yii;
 use yii\base\Widget;

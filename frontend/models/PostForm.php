@@ -55,7 +55,7 @@ class PostForm extends Model
     {
         return [
             // 必填
-            [['title','content','cat_id','tags'], 'required'],
+            [['title','content','cat_id'], 'required'],
             // 整形
             [['id','cat_id'], 'integer'],
             // 标题长度
@@ -139,6 +139,60 @@ class PostForm extends Model
             $this->_lastError = $e->getMessage();
             return false;
         }
+    }
+
+    /**
+     * @param int $s
+     * @param int $e文章更新显示
+     * @param string $char
+     * @return null|string
+     */
+    public function getupdate($id)
+    {
+        $data = PostsModel::find()->with('relate.tag')->where(['id'=>$id])->asArray()->one();
+        $data = self::_formatList2($data);
+//        $this->title = $data['title'];
+//        $this->cat_id = $data['cat_id'];
+//        $this->label_img = $data['label_img'];
+//        $this->content = $data['content'];
+//        $this->tags = $data['tags'];
+        $this->setAttributes($data);
+    }
+
+    public function update($id)
+    {
+        $transaction = Yii::$app->db->beginTransaction();
+        try{
+            $postmodel = PostModel::find()->with('relate.tag')->where(['id'=>$id])->one();
+            $postmodel->setAttributes($this->attributes);
+            $postmodel->summary = $this->_getSummary(); //生成摘要
+            $postmodel->user_id = Yii::$app->user->identity->id;
+            $postmodel->user_name = Yii::$app->user->identity->username;
+            $postmodel->is_valid = PostModel::IS_VALID;
+            $postmodel->updated_at = time();
+            if (!$postmodel->save()){
+                throw new \yii\base\Exception('文章保存失败!');
+            }
+            $this->id = $postmodel->id;
+            //调用事件
+            $data = array_merge($this->getAttributes(),$postmodel->getAttributes());
+            $this->_eventAfterCreate($data);
+            $transaction->commit();
+            return true;
+        }catch ( \yii\base\Exception $e)
+        {
+            $transaction->rollBack();
+            $this->_lastError = $e->getMessage();
+            return false;
+        }
+    }
+    private function _formatList2($data)
+    {
+        foreach ($data['relate'] as $list){
+            $data['tags'][]= $list['tag']['tag_name'];
+        }
+        unset($data['relate']);
+        return $data;
     }
 
     /*私有文章简介截取方法*/
