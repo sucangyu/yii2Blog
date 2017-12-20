@@ -50,7 +50,9 @@ class SiteController extends BaseController
         ];
     }
 
+
     /**
+     * 扩展类-图片上传
      * @inheritdoc
      */
     public function actions()
@@ -62,6 +64,13 @@ class SiteController extends BaseController
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+            ],
+            //图片上传扩展
+            'upload'=>[
+                'class' => 'common\widgets\file_upload\UploadAction',     //这里扩展地址别写错
+                'config' => [
+                    'imagePathFormat' => "/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+                ]
             ],
         ];
     }

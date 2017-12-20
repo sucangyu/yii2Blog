@@ -24,3 +24,8 @@ $ git push sae master:1//把本地库的内容推送到远程
 http://www.sinacloud.com/doc/sae/tutorial/code-deploy.html#git
 推荐！手把手教你使用Git - 文章 - 伯乐在线
 http://blog.jobbole.com/78960/
+
+
+
+yii2示例博客github地址
+https://github.com/153622362/yii2blog/

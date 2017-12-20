@@ -46,7 +46,7 @@ AppAsset::register($this);
         $rightMenus[] = ['label' => Yii::t('common','Login'), 'url' => ['/site/login']];
     } else {
         $rightMenus[] = [
-            'label' => '<img src="'.yii::$app->params['avatar']['small'].'" alt="' . Yii::$app->user->identity->username . '">',
+            'label' => '<img src="'.(Yii::$app->user->identity->avatar?\Yii::$app->params['upload_url'].Yii::$app->user->identity->avatar:\Yii::$app->params['avatar']['small']).'" alt="' . Yii::$app->user->identity->username . '">',
             'linkOptions' => ['class' => 'avatar'],
             'items' => [
                 '<li>'

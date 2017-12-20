@@ -14,6 +14,7 @@ class SignupForm extends Model
     public $email;
     public $password;
     public $rePassword;
+    public $avatar;
     public $verifyCode;
 
 
@@ -41,6 +42,7 @@ class SignupForm extends Model
 
             ['verifyCode', 'captcha'],
 
+            ['avatar', 'string','max'=>255],
         ];
     }
     /*注册映射*/
@@ -51,6 +53,7 @@ class SignupForm extends Model
             'email' => yii::t('common','Email'),
             'password' => '密码',
             'rePassword' => '重复密码',
+            'avatar' => '头像',
             'verifyCode' => '验证码',
         ];
     }
@@ -65,11 +68,13 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
-        
+//        var_dump($this->avatar);
+//        die;
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
+        $user->avatar = $this->avatar;
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;

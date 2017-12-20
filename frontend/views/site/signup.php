@@ -28,6 +28,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'rePassword')->passwordInput() ?>
 
+                <?= $form->field($model, 'avatar')->widget('common\widgets\file_upload\FileUpload',[
+                    'config'=>[
+                        //图片上传的一些配置，不写调用默认配置
+                        //'domain_url' => 'http://www.yii-china.com',
+                    ]
+                ]) ?>
+
                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className()) ?>
 
                 <div class="form-group">
