@@ -7,7 +7,7 @@ $(function () {
 	$(".J_lastTime ul li").hover(function(){
 		var id = $(this).index();
 		$(".J_lastTime ul li").removeClass("hov").eq(id).addClass("hov");
-	})
+	});
 	
 	//说一说
 	$(".j-feed").click(function(){
@@ -32,7 +32,31 @@ $(function () {
 				}
 			},
 		})
-	})
+	});
+
+    //文章搜索
+    $(".j-search").click(function(){
+        var url = $(this).attr("data-url");
+        var content = $("select").val(); //获取文本框内容
+
+        if(content == ''){
+            $(".field-search-title").addClass("has-error");
+            return false;
+        }
+
+        $.ajax({
+            type:"post",
+            url: url,
+            dataType:"json",
+            data:{ title:content },
+            success:function(data){
+
+            },
+        });
+
+
+
+    })
 	
 //	$("button").click(function(){
 //        var url = "";  //调用的地址

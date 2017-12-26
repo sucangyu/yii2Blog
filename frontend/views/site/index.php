@@ -7,6 +7,7 @@ use yii\base\Widget;
 use frontend\widgets\chat\ChatWidget;
 use frontend\widgets\hot\HotWidget;
 use frontend\widgets\tag\TagWidget;
+use frontend\widgets\search\SearchWidget;
 
 $this->title = '博客-首页';
 ?>
@@ -19,6 +20,8 @@ $this->title = '博客-首页';
         <?=PostWidget::widget()?>
     </div>
     <div class="col-lg-3">
+        <!--搜索-->
+        <?=SearchWidget::widget()?>
         <!-- 留言组件 -->
         <?=ChatWidget::widget()?>
         <!-- 热门浏览 -->

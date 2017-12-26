@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use frontend\models\FeedForm;
+use frontend\models\PostForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -237,7 +238,15 @@ class SiteController extends BaseController
     }
 
 
+    /**
+     * 文章搜索
+     */
+    public function actionPostsearch(){
 
+        $p_id = Yii::$app->request->post('title');
+
+        return $this->redirect(['post/view','id'=>$p_id]);
+    }
 
 
 

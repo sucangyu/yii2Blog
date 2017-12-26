@@ -346,3 +346,11 @@ a.desc:after {
     background-color:#5bc0de;
     text-decoration: none;
 }
+
+/*
+搜索框调整
+ */
+.search .select2-container--krajee .select2-selection{
+    border-radius: 0px;
+}
+

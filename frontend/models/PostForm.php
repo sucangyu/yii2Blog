@@ -77,6 +77,14 @@ class PostForm extends Model
         ];
     }
 
+    /**
+     * @param $cond
+     * @param int $curPage
+     * @param int $pafeSizc
+     * @param array $orderBy
+     * @return array
+     * 文章列表
+     */
     public static function getList($cond,$curPage = 1,$pafeSizc = 5,$orderBy = ['id'=>SORT_DESC]){
         $model = new PostsModel();
         //查询语句
@@ -93,6 +101,36 @@ class PostForm extends Model
 
         return $res;
     }
+
+    /*
+     * 查询文章
+     */
+    public function getTitleList(){
+        $model = new PostsModel();
+        //查询语句
+        $select = ['id','title'];
+        $orderBy = ['id'=>SORT_DESC];
+        $res = $model->find()->select($select)->asArray()->orderBy($orderBy)->all();
+        //$data = array_column($res, 'title');//array_column这个函数只获取了title这一列重新组成了一维数组索引为(0,1,2,3,.....)
+        foreach ($res as $key => $re){
+            $data[$re['id']] = $re['title'];
+        }
+//        var_dump($data);
+//        die;
+        return $data;
+    }
+
+    /*
+     * 查询文章
+     */
+    public function getSearchPost($cond){
+        $model = new PostsModel();
+        //查询语句
+        $res = $model->find()->andFilterWhere(['like', 'title', $cond]);
+
+        return $res;
+    }
+
 
     /**
      * 文章列表数据格式化方法
@@ -151,24 +189,23 @@ class PostForm extends Model
     {
         $data = PostsModel::find()->with('relate.tag')->where(['id'=>$id])->asArray()->one();
         $data = self::_formatList2($data);
-//        $this->title = $data['title'];
-//        $this->cat_id = $data['cat_id'];
-//        $this->label_img = $data['label_img'];
-//        $this->content = $data['content'];
-//        $this->tags = $data['tags'];
         $this->setAttributes($data);
     }
 
+    /**
+     * @param $id
+     * @return bool文章更新方法
+     */
     public function update($id)
     {
         $transaction = Yii::$app->db->beginTransaction();
         try{
-            $postmodel = PostModel::find()->with('relate.tag')->where(['id'=>$id])->one();
+            $postmodel = PostsModel::find()->with('relate.tag')->where(['id'=>$id])->one();
             $postmodel->setAttributes($this->attributes);
             $postmodel->summary = $this->_getSummary(); //生成摘要
             $postmodel->user_id = Yii::$app->user->identity->id;
             $postmodel->user_name = Yii::$app->user->identity->username;
-            $postmodel->is_valid = PostModel::IS_VALID;
+            $postmodel->is_valid = PostsModel::IS_VALID;
             $postmodel->updated_at = time();
             if (!$postmodel->save()){
                 throw new \yii\base\Exception('文章保存失败!');

@@ -111,6 +111,7 @@ class PostController extends BaseController
                 return $this->redirect(['post/view','id'=>$model->id]);
             }
         }
+        //获取所有分类
         $cats = CatsModel::getAllCats();
         return $this->render('update',['model'=>$model,'cats' => $cats]);
     }

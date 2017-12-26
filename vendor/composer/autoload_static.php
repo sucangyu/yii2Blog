@@ -28,7 +28,17 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         ),
         'p' => 
         array (
+            'postor\\sae\\' => 11,
             'phpDocumentor\\Reflection\\' => 25,
+        ),
+        'm' => 
+        array (
+            'miloschuman\\highcharts\\' => 23,
+        ),
+        'k' => 
+        array (
+            'kartik\\select2\\' => 15,
+            'kartik\\base\\' => 12,
         ),
         'c' => 
         array (
@@ -105,11 +115,27 @@ class ComposerStaticInit7e2bca6a7ad2fb4481bca401a2f2aefe
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'postor\\sae\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/postor/yii2-for-sae',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+        ),
+        'miloschuman\\highcharts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/miloschuman/yii2-highcharts-widget/src',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
         ),
         'cebe\\markdown\\' => 
         array (

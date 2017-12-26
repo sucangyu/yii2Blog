@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ]) ?>
             <?= $form->field($model, 'tags')->widget('common\widgets\tags\TagWidget')?>
             <div class="from-grop">
-                <?=\yii\helpers\Html::submitButton('发布',['class'=>'btn btn-success']) ?>
+                <?=\yii\helpers\Html::submitButton('更新',['class'=>'btn btn-success']) ?>
             </div>
             <?php \yii\widgets\ActiveForm::end()?>
 
