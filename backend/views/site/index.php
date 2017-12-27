@@ -6,52 +6,107 @@ use miloschuman\highcharts\Highcharts;
 $this->title = '博客后台管理系统';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="">
-    <?php
-    echo Highcharts::widget([
-        'options'=>'{
-         "chart": {
-             "plotBackgroundColor": null,
-             "plotBorderWidth": null,
-             "plotShadow": false
-         },
-         "title": {
-             "text": "Browser market shares at a specific website, 2010"
-         },
-         "tooltip": {
-             "pointFormat": "{series.name}: <b>{point.percentage:.1f}%</b>"
-         },
-         "plotOptions": {
-             "pie": {
-                 "allowPointSelect": true,
-                 "cursor": "pointer",
-                 "dataLabels": {
-                     "enabled": true,
-                    "color": "#000000",
-                     "connectorColor": "#000000",
-                     "format": "<b>{point.name}</b>: {point.percentage:.1f} %"
-                 }
-             }
-         },
-         "series": [{
-     "type": "pie",
-            "name": "Browser share",
-             "data": [
-         ["Firefox",   45.0],
-         ["IE",       26.8],
-                 {
-                     "name": "Chrome",
-                     "y": 12.8,
-                     "sliced": true,
-                     "selected": true
-                 },
-                 ["Safari",    8.5],
-                 ["Opera",     6.2],
-                 ["Others",   0.7]
-             ]
-         }]
-     }'
-    ]);
-    ?>
+<div class="container-fluid">
+    <div class="col-lg-6">
+        <?php
+        echo Highcharts::widget ( [
+            'options' => '{
+                "chart": {
+                    "plotBackgroundColor": null,
+                    "plotBorderWidth": null,
+                    "plotShadow": true
+                },
+                "title": {
+                    "text": "标签使用前十次数"
+                },
+                "tooltip": {
+                    "pointFormat": "{series.name}: <b>{point.y:.1f}次</b>"
+                },
+                "xAxis": {
+                    "type": "category"
+                },
+                "yAxis": {
+                    "title": {
+                        "text": "Total percent market share"
+                    }
+
+                },
+                "legend": {
+                    "enabled": false
+                },
+                "plotOptions": {
+                    "series": {
+                        "borderWidth": 0,
+                        "dataLabels": {
+                            "enabled": true,
+                            "format": "{point.y}次"
+                        }
+                    }
+                },
+                "series": [{
+                    "type": "column",
+                    "name": "浏览",
+                    "colorByPoint": true,
+                    "data": '.$posts.'
+                }],
+                "drilldown": {
+                    
+                }
+            }'
+        ]);
+
+        ?>
+    </div>
+    <div class="col-lg-6">
+        <?php
+        echo Highcharts::widget ( [
+            'options' => '{
+                "chart": {
+                    "plotBackgroundColor": null,
+                    "plotBorderWidth": null,
+                    "plotShadow": true
+                },
+                "title": {
+                    "text": "排前5浏览的文章"
+                },
+                "tooltip": {
+                    "pointFormat": "{series.name}: <b>{point.y:.1f}次</b>"
+                },
+                "xAxis": {
+                    "type": "category"
+                },
+                "yAxis": {
+                    "title": {
+                        "text": "Total percent market share"
+                    }
+
+                },
+                "legend": {
+                    "enabled": false
+                },
+                "plotOptions": {
+                    "series": {
+                        "borderWidth": 0,
+                        "dataLabels": {
+                            "enabled": true,
+                            "format": "{point.y}次"
+                        }
+                    }
+                },
+                "series": [{
+                    "type": "column",
+                    "name": "浏览",
+                    "colorByPoint": true,
+                    "data": '.$tags.'
+                }],
+                "drilldown": {
+                    
+                }
+            }'
+        ]);
+        
+        ?>
+    </div>
+
 
 </div>

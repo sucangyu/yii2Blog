@@ -65,7 +65,7 @@ class PostsModel extends BaseModel
     }
 
     /**
-     * 文章关联关系
+     * 文章标签关联关系
      */
     public function getRelate(){
         return $this->hasMany(RelationPostTagsModel::className(),['post_id'=>'id']);
@@ -73,7 +73,7 @@ class PostsModel extends BaseModel
     }
 
     /**
-     * 文章关联关系
+     * 文章数据关联关系
      */
     public function getExtend(){
         return $this->hasOne(PostExtendsModel::className(),['post_id'=>'id']);

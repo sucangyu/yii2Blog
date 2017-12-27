@@ -63,4 +63,12 @@ class PostExtendsModel extends BaseModel
             $counter->updateCounters($countData);
         }
     }
+    /**
+     * 文章数据关联关系
+     */
+    public function getExtend(){
+        return $this->hasOne(PostsModel::className(),['id'=>'post_id']);
+
+    }
+
 }
