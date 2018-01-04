@@ -3,10 +3,13 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use frontend\widgets\calendar\CalendarWidget;
 $this->title = '创建文章';
 $this->params['breadcrumbs'][] = ['label'=>'文章','url'=>['post/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
 
 <div class="row">
 	<div class="col-lg-9">
@@ -44,6 +47,9 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 	<div class="col-lg-3">
+        <!-- 日历 -->
+        <?=CalendarWidget::widget()?>
+
 		<div class="panel-title box-title">
 			<span>注意事项</span>
 		</div>

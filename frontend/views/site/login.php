@@ -36,4 +36,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php ActiveForm::end(); ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-5"  style="border-top: #f5f5f5 1px solid;">
+            <p style="margin-top: 10px;color: #5f6b87;">第三方账号登录:</p>
+        </div>
+    </div>
 </div>

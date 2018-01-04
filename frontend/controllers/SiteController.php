@@ -14,6 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use common\models\TUserSignModel;
 
 /**
  * Site controller
@@ -249,7 +250,51 @@ class SiteController extends BaseController
     }
 
 
+    /**
+     * 日历签到
+     */
+    public function actionTsign(){
+        $model = new TUserSignModel();
+        $de = intval (Yii::$app->request->post('de'));
+        $where['singYM'] = strtotime (date ('Y-m-1'));//同一年同一月份
+        $where['user_id'] = Yii::$app->user->identity->id;//用户id
+        //检查同一年同一月份此用户是否创建了签到
+        //ps:签到表是一人一年有12条,每一条存的是当月签到的日期
+        $res = $model->find()->where($where)->one();
 
+        if ($res){
+            //本月已签过执行修改
+            $dArr = json_decode ($res['signHistoy']);
+            array_push($dArr, $de);//在签到数组末尾加上今日签到日期
+            $res->count = $res['count']+1;
+            $res->signHistoy = json_encode ($dArr);//接收签到日期
+            if ($res->update()){
+                return json_encode(['status'=>true]);
+            }
+            return json_decode(['status'=>false,'msg'=>'签到失败']);
+        }else{
+            //本月未签过执行添加
+            $model->user_id = Yii::$app->user->identity->id;
+            $model->signcount = 1;
+            $model->count = 1;
+            $model->lastModifyTime = date ('Y-m-d H:i:s');
+            $model->signHistoy = json_encode (array('0'=>$de));//接收签到日期
+            $model->singYM = $where['singYM'];
+
+            if ($model->save ()){
+                return json_encode(['status'=>true]);
+            }
+            return json_decode(['status'=>false,'msg'=>'签到失败']);
+        }
+
+
+        if ($model->validate()){
+            if ($model->create()){
+
+            }
+        }
+
+    }
 
 
 
