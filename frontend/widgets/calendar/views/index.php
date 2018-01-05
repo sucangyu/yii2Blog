@@ -5,9 +5,9 @@ use yii\helpers\Html;
 <?=Html::cssFile('@web/statics/css/easyui.css')?>
 <?=Html::jsFile('@web/statics/js/jquery-1.8.3.min.js')?>
 <div class="panel">
-<!-- 只言片语 -->
+<!-- 签到日历 -->
 <div class="panel-title box-title">
-    <span><strong>日历</strong></span>
+    <span><strong>签到日历</strong></span>
 <!--    <span class="pull-right"><a href="#" class="font-12">更多》</a></span>-->
 </div>
 

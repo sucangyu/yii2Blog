@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\catSearch */
+/* @var $searchModel common\models\CatsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = '分类管理';
@@ -26,6 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'cat_name',
+            'pid',
+            'sort',
+            'created_at:datetime',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

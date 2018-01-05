@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use common\models\CatsModel;
 
 /**
- * catSearch represents the model behind the search form about `common\models\CatsModel`.
+ * CatsSearch represents the model behind the search form about `common\models\CatsModel`.
  */
-class catSearch extends CatsModel
+class CatsSearch extends CatsModel
 {
     /**
      * @inheritdoc
@@ -18,7 +18,7 @@ class catSearch extends CatsModel
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'pid', 'sort', 'created_at'], 'integer'],
             [['cat_name'], 'safe'],
         ];
     }
@@ -60,6 +60,9 @@ class catSearch extends CatsModel
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'pid' => $this->pid,
+            'sort' => $this->sort,
+            'created_at' => $this->created_at,
         ]);
 
         $query->andFilterWhere(['like', 'cat_name', $this->cat_name]);

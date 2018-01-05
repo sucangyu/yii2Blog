@@ -4,15 +4,15 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\CatsModel;
-use common\models\catSearch;
+use common\models\CatsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CatController implements the CRUD actions for CatsModel model.
+ * CatsController implements the CRUD actions for CatsModel model.
  */
-class CatController extends Controller
+class CatsController extends Controller
 {
     /**
      * @inheritdoc
@@ -35,7 +35,7 @@ class CatController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new catSearch();
+        $searchModel = new CatsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

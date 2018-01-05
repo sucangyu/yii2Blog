@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\CatsModel */
 
-$this->title = '添加分类名称';
-$this->params['breadcrumbs'][] = ['label' => '分类管理', 'url' => ['index']];
+$this->title = 'Create Cats Model';
+$this->params['breadcrumbs'][] = ['label' => 'Cats Models', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cats-model-create">

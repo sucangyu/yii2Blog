@@ -1,9 +1,9 @@
 .home{ width: 100%; margin: auto;}
 .home h4{text-align: center;}
-.home .tr1{ background: #32CD32;}
+.home .tr1{ background: #5cb85c;}
 .home thead>tr>td{ width: 100px; height: 30px; text-align: center; color: #fff;}
-.home tbody>tr>td{ width: 100px; height: 40px; margin: 1px; background: #ececec; text-align: center;}
+.home tbody>tr>td{ width: 100px; height: 30px; margin: 1px; background: #FAFAFA; text-align: center;}
 #button{margin-top: 10px;}
-.color{ color: red; font-size: 18px;}
+.color{ color: red; font-size: 18px;border: #00a0e9 1px solid;}
 .los{ color: #32CD32;font-size: 18px;}
 .weiqian{color: #03A9F4; font-size: 18px;}

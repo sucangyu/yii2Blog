@@ -1,4 +1,5 @@
 <?php
+use frontend\widgets\calendar\CalendarWidget;
 $this->title = '编辑文章';
 $this->params['breadcrumbs'][] = ['label' => '文章', 'url' => ['post/index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -32,6 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="col-lg-3">
+        <!-- 日历 -->
+        <?=CalendarWidget::widget()?>
+
         <div class="panel-title box-title">
             <span>注意事项</span>
         </div>

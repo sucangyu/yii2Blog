@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\CatsModel */
 
-$this->title = '更新分类名称: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => '分类管理', 'url' => ['index']];
+$this->title = 'Update Cats Model: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Cats Models', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = '更新';
+$this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="cats-model-update">
 
