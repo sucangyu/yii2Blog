@@ -31,7 +31,11 @@ class CalendarWidget extends Widget
         //ps:签到表是一人一年有12条,每一条存的是当月签到的日期
         $res = $model->find()->where($where)->one();
         $data = $res['signHistoy'];//已登录人签到日期数组
-        //var_dump ($data);
+        if (!$res) {
+           $data = '[]';
+        }
+        
+        //var_dump ($where['singYM']);
         //die;
         return $this->render('index',['date'=>$date,'data'=>$data]);
     }
