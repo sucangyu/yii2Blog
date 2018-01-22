@@ -6,7 +6,6 @@ use yii\base\Widget;
 use frontend\widgets\hot\HotWidget;
 use yii\helpers\Url;
 use frontend\widgets\tag\TagWidget;
-
 ?>
 <div class="row">
     <div class="col-lg-9">
