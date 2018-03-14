@@ -2,8 +2,8 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
-<?=Html::cssFile('@web/statics/css/easyui.css')?>
-<?=Html::jsFile('@web/statics/js/jquery-1.8.3.min.js')?>
+<?=Html::cssFile('@web/frontend/web/statics/css/easyui.css')?>
+<?=Html::jsFile('@web/frontend/web/statics/js/jquery-1.8.3.min.js')?>
 <div class="panel">
 <!-- 签到日历 -->
 <div class="panel-title box-title">

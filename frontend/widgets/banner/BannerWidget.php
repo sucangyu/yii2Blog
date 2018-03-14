@@ -19,13 +19,13 @@ class BannerWidget extends Widget
             $this->item = [
                 [
                     'label'=>'demo',
-                    'img_url'=>'/statics/images/banner/b_0.png',
+                    'img_url'=>'/frontend/web/statics/images/banner/b_0.png',
                     'url'=>['site/index'],
                     'html'=>'',
                     'active'=>'active',
                 ],
-                ['label'=>'demo','img_url'=>'/statics/images/banner/b_1.png','url'=>['site/index'],'html'=>''],
-                ['label'=>'demo','img_url'=>'/statics/images/banner/b_2.png','url'=>['site/index'],'html'=>''],
+                ['label'=>'demo','img_url'=>'/frontend/web/statics/images/banner/b_1.png','url'=>['site/index'],'html'=>''],
+                ['label'=>'demo','img_url'=>'/frontend/web/statics/images/banner/b_2.png','url'=>['site/index'],'html'=>''],
             ];
         }
     }

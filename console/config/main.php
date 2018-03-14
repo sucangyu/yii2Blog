@@ -16,7 +16,11 @@ return [
         'fixture' => [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
-          ],
+        ],
+
+        'migrate' => [
+            'class' => 'e282486518\migration\ConsoleController',
+        ],
     ],
     'components' => [
         'log' => [

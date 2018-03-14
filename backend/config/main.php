@@ -57,6 +57,11 @@ return [
             'rules' => [
             ],
         ],
+
+        'assetManager'=>[  
+            'basePath'=>'@webroot/backend/web',  
+            'baseUrl'=>'@web/backend/web/assets',  
+        ], 
         
     ],
     'params' => $params,

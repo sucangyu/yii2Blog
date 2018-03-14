@@ -5,7 +5,7 @@ use yii\helpers\Url;
 <!-- 只言片语 -->
 <div class="panel-title box-title">
     <span><strong>只言片语</strong></span>
-    <span class="pull-right"><a href="#" class="font-12">更多》</a></span>
+    <!-- <span class="pull-right"><a href="#" class="font-12">更多》</a></span> -->
 </div>
 
 <div class="panel-body">
@@ -24,7 +24,7 @@ use yii\helpers\Url;
                 <li class="media">
                     <div class="media-left">
                         <a href="#" rel="author" data-original-title="" title="">
-                            <img width="40px" src="<?=$list['user']['avatar'];?>"/>
+                            <img width="40px" height="40px" src="<?=($list['user']['avatar']?\Yii::$app->params['upload_url'].$list['user']['avatar']:\Yii::$app->params['avatar']['small'])?>"/>
                         </a>
                     </div>
                     <div class="media-body" style="font-size: 12px;">
