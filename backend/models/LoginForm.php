@@ -43,11 +43,11 @@ class LoginForm extends Model
         ];
     }
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
+     * 验证密码。
+     * 该方法用作密码的内联验证。
      *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @param string $attribute 当前正在验证的属性
+     * @param array $params 规则中给出的附加名称-值对
      */
     public function validatePassword($attribute, $params)
     {
@@ -60,9 +60,9 @@ class LoginForm extends Model
     }
 
     /**
-     * Logs in a user using the provided username and password.
+     * 使用所提供的用户名和密码登录用户。
      *
-     * @return bool whether the user is logged in successfully
+     * @return bool 用户是否已成功登录
      */
     public function login()
     {
@@ -74,7 +74,7 @@ class LoginForm extends Model
     }
 
     /**
-     * Finds user by [[username]]
+     * 发现用户 [[username]]
      *
      * @return User|null
      */

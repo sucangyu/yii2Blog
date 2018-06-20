@@ -43,6 +43,24 @@ class SidebarWidget extends Menu
                     ],
                 ]
             ],
+            ['label' =>'<a href=""><i class="fa fa-user"></i><span>系统设置</span></a>','options'=>['class'=>'nav-parent'],'items'=>[
+                    ['label'=>'管理员列表','url'=>['admin/index'],'items'=>[
+                        ['label'=>'更新会员','url'=>['admin/update'],'visible'=>false],
+                        ['label'=>'会员详情','url'=>['admin/view'],'visible'=>false],
+                        ]
+                    ],
+                    ['label'=>'角色管理','url'=>['admin/role'],'items'=>[
+                        ['label'=>'更新会员','url'=>['admin/update'],'visible'=>false],
+                        ['label'=>'会员详情','url'=>['admin/view'],'visible'=>false],
+                        ]
+                    ],
+                    ['label'=>'权限管理','url'=>['admin/access'],'items'=>[
+                        ['label'=>'更新会员','url'=>['admin/update'],'visible'=>false],
+                        ['label'=>'会员详情','url'=>['admin/view'],'visible'=>false],
+                        ]
+                    ],
+                ]
+            ],
         ];
     }
 

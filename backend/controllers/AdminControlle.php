@@ -1,5 +1,5 @@
 <?php
-//首页
+//管理员
 namespace backend\controllers;
 
 use Yii;
@@ -13,7 +13,7 @@ use common\models\TagsModel;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class AdminController extends Controller
 {
     /**
      * @inheritdoc

@@ -130,7 +130,7 @@ AppAsset::register($this);
 <div class="leftpanel">
     <div class="leftpanelinner">
 
-      <!-- ################## LEFT PANEL PROFILE ################## -->
+    <!-- ################## LEFT PANEL PROFILE ################## -->
 
     <div class="media leftpanel-profile">
         <div class="media-left">
